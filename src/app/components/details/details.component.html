@@ -1,0 +1,40 @@
+<app-home
+  [topLeagueCountries]="countriesList"
+  (getCountriesData)="getCountries($event)"
+  [currentActiveCountry]="selectedCountryName"
+></app-home>
+
+<div *ngIf="errorMessage">{{ errorMessage }}</div>
+
+<table class="table table-bordered" *ngIf="leagueStandingsList.length > 0">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col"></th>
+      <th scope="col">{{ STANDING_CONSTANT.NAME }}</th>
+      <th scope="col">{{ STANDING_CONSTANT.GAMES }}</th>
+      <th scope="col">{{ STANDING_CONSTANT.WIN }}</th>
+      <th scope="col">{{ STANDING_CONSTANT.LOOSE }}</th>
+      <th scope="col">{{ STANDING_CONSTANT.DRAW }}</th>
+      <th scope="col">{{ STANDING_CONSTANT.GOAL_DIFFERNCE }}</th>
+      <th scope="col">{{ STANDING_CONSTANT.POINTS }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let standing of leagueStandingsList">
+      <td>{{ standing['rank'] }}</td>
+      <td><img [src]="standing['team'].logo" class="logo" /></td>
+      <td>
+        <a class="defaultLink" routerLink="/teams/{{ standing['team'].id }}">{{
+          standing['team'].name
+        }}</a>
+      </td>
+      <td>{{ standing['all']?.played }}</td>
+      <td>{{ standing['all']?.win }}</td>
+      <td>{{ standing['all']?.draw }}</td>
+      <td>{{ standing['all']?.lose }}</td>
+      <td>{{ standing['goalsDiff'] }}</td>
+      <td>{{ standing['points'] }}</td>
+    </tr>
+  </tbody>
+</table>

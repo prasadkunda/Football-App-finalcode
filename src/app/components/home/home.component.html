@@ -1,0 +1,7 @@
+<ul class="nav nav-tabs justify-content-center">
+    <li class="nav-item" *ngFor = 'let country of topLeagueCountries'>
+      <a id="{{country.name}}Select" [ngClass]="{'active': currentActiveCountry == country.name}" 
+       class="nav-link" aria-current="page" (click)="emitCountriesEvent(country)">{{country.name}}</a>
+    </li>
+  </ul>
+  

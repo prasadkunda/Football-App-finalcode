@@ -1,0 +1,16 @@
+nav ul li{
+    padding : 0 40px 0 40px;
+    /* margin: auto; */
+    justify-content: center;
+    background-color:darkgray;    
+  }
+  
+.active{
+    text-decoration: underline;
+    font-weight: bold;
+    color: black !important;
+}
+.nav{
+    background-color:darkgray;
+}
+

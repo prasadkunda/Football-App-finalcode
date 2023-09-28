@@ -1,0 +1,24 @@
+.backbtn {
+    width: 5rem;
+    margin: 12px;
+    background-color: black;
+  }
+  
+  .card-body {
+    line-height: 30px;
+    padding-top: 29px;
+  }
+  
+  .card {
+    height: 93vh;
+  }
+  
+  .table-wrap {
+    overflow-y: scroll;
+    table-layout: fixed;
+  }
+  
+  .card {
+    height: 20%;
+  }
+  

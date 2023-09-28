@@ -1,0 +1,20 @@
+<div class="card" >
+    <div class="card-body" >
+      <!-- <app-spinner [loading]="loading"></app-spinner> -->
+      <div class='table-wrap' >
+        <table class="table table-sm table-light table-striped" >
+          <tbody>
+            <tr *ngFor="let fixture of fixtures">
+              <td> <img [src]="fixture.teams.home.logo" class="logo" /></td>
+              <td>{{ fixture.teams.home.name }}</td>
+              <td>{{ fixture.goals.home }} - {{ fixture.goals.away }}</td>
+              <td>{{ fixture.teams.away.name }}</td>
+              <td><img [src]="fixture.teams.away.logo" class="logo" /></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <a routerLink="/" class="btn btn-primary backbtn" *ngIf="!loading">Back</a>
+  </div>
+  
